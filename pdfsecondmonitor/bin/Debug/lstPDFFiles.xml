@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFileViewParam xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileViewParam>
+    <FileName>C:\Users\bellm\OneDrive\ドキュメント\王国奉仕\個人\組織の本.pdf</FileName>
+    <zoom>100</zoom>
+  </FileViewParam>
+  <FileViewParam>
+    <FileName>C:\Users\bellm\Downloads\CA-copgm19_E.pdf</FileName>
+    <zoom>100</zoom>
+  </FileViewParam>
+</ArrayOfFileViewParam>
