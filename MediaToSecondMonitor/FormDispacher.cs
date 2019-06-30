@@ -103,7 +103,7 @@ namespace MediaToSecondMonitor
             targetForm.Show();
         }
 
-        private void CloseViwers()
+        public void CloseViewers()
         {
             var forms = new List<Form>(_livingViewer);//閉じていくうちに元が破壊されるのでコピーする
             foreach(var f in forms)
