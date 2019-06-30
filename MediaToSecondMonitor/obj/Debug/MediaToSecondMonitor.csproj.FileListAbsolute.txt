@@ -1,0 +1,12 @@
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\x86\pdfium.dll
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\MediaToSecondMonitor.exe.config
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\MediaToSecondMonitor.exe
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\MediaToSecondMonitor.pdb
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csprojAssemblyReference.cache
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.Properties.Resources.resources
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csproj.GenerateResource.cache
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csproj.CoreCompileInputs.cache
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.exe
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.pdb
+C:\Users\bellyoshi\source\repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.ctlPDF.resources
+C:\Users\bellyoshi\source\repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.frmOperation.resources
