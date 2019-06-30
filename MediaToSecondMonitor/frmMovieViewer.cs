@@ -16,5 +16,10 @@ namespace MediaToSecondMonitor
         {
             InitializeComponent();
         }
+
+        public AxWMPLib.AxWindowsMediaPlayer GetPlayer()
+        {
+            return axWindowsMediaPlayer1;
+        }
     }
 }

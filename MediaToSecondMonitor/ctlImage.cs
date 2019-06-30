@@ -48,6 +48,7 @@ namespace MediaToSecondMonitor
             Rotate(RotateFlipType.Rotate270FlipNone);
         }
 
+        private FormDispacher _dispacher = FormDispacher.Instance;
         private FileViewParam _fileViewParam;
 
         public void SetFileInfo(FileViewParam f)
@@ -55,7 +56,7 @@ namespace MediaToSecondMonitor
             this._fileViewParam = f;
             if (f == null)
                 return;
-            _pictureBox = _dispacher.ShowImage();
+            _pictureBox = _dispacher.GetPictureBox();
             None();
             _pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // サイズ調整
         }

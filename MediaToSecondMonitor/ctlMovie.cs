@@ -16,7 +16,7 @@ namespace MediaToSecondMonitor
         {
             InitializeComponent();
         }
-        private FormDispacher _dispacher = FormDispacher.GetInstance;
+        private FormDispacher _dispacher = FormDispacher.Instance;
 
 
         private AxWMPLib.AxWindowsMediaPlayer player;
@@ -66,4 +66,4 @@ namespace MediaToSecondMonitor
         }
     }
 }
-}
+

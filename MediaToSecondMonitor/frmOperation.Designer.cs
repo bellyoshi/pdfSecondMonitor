@@ -31,31 +31,33 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDisplay = new System.Windows.Forms.ComboBox();
             this.lstPDFFiles = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbcFileOpes = new System.Windows.Forms.TabControl();
+            this.tpAdobePDF = new System.Windows.Forms.TabPage();
+            this.ctlPDF2 = new MediaToSecondMonitor.ctlPDF();
+            this.tpImage = new System.Windows.Forms.TabPage();
+            this.ctlImage2 = new MediaToSecondMonitor.ctlImage();
+            this.tpMediaPlayer = new System.Windows.Forms.TabPage();
+            this.ctlMovie2 = new MediaToSecondMonitor.ctlMovie();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ctlImage1 = new MediaToSecondMonitor.ctlImage();
-            this.ctlMovie1 = new MediaToSecondMonitor.ctlMovie();
-            this.ctlPDF1 = new MediaToSecondMonitor.ctlPDF();
+            this.txtPDFFileName = new System.Windows.Forms.TextBox();
+            this.ファイル情報 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tbcFileOpes.SuspendLayout();
+            this.tpAdobePDF.SuspendLayout();
+            this.tpImage.SuspendLayout();
+            this.tpMediaPlayer.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbDisplay);
             this.groupBox1.Location = new System.Drawing.Point(25, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(733, 75);
@@ -72,15 +74,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "表示するディスプレイ";
             // 
-            // comboBox1
+            // cmbDisplay
             // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
+            this.cmbDisplay.AllowDrop = true;
+            this.cmbDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDisplay.FormattingEnabled = true;
+            this.cmbDisplay.Location = new System.Drawing.Point(162, 21);
+            this.cmbDisplay.Name = "cmbDisplay";
+            this.cmbDisplay.Size = new System.Drawing.Size(121, 23);
+            this.cmbDisplay.TabIndex = 0;
             // 
             // lstPDFFiles
             // 
@@ -113,38 +115,71 @@
             // 
             this.OpenFileDialog1.FileName = "openFileDialog1";
             // 
-            // tabControl1
+            // tbcFileOpes
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(274, 123);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(514, 261);
-            this.tabControl1.TabIndex = 3;
+            this.tbcFileOpes.Controls.Add(this.tpAdobePDF);
+            this.tbcFileOpes.Controls.Add(this.tpImage);
+            this.tbcFileOpes.Controls.Add(this.tpMediaPlayer);
+            this.tbcFileOpes.Location = new System.Drawing.Point(274, 123);
+            this.tbcFileOpes.Name = "tbcFileOpes";
+            this.tbcFileOpes.SelectedIndex = 0;
+            this.tbcFileOpes.Size = new System.Drawing.Size(514, 261);
+            this.tbcFileOpes.TabIndex = 3;
             // 
-            // tabPage1
+            // tpAdobePDF
             // 
-            this.tabPage1.Controls.Add(this.ctlImage1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(506, 232);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpAdobePDF.Controls.Add(this.ctlPDF2);
+            this.tpAdobePDF.Location = new System.Drawing.Point(4, 25);
+            this.tpAdobePDF.Name = "tpAdobePDF";
+            this.tpAdobePDF.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAdobePDF.Size = new System.Drawing.Size(506, 232);
+            this.tpAdobePDF.TabIndex = 0;
+            this.tpAdobePDF.Text = "tabPage1";
+            this.tpAdobePDF.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // ctlPDF2
             // 
-            this.tabPage2.Controls.Add(this.ctlMovie1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(506, 232);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.ctlPDF2.IsHalf = false;
+            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
+            this.ctlPDF2.Name = "ctlPDF2";
+            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
+            this.ctlPDF2.TabIndex = 0;
+            // 
+            // tpImage
+            // 
+            this.tpImage.Controls.Add(this.ctlImage2);
+            this.tpImage.Location = new System.Drawing.Point(4, 25);
+            this.tpImage.Name = "tpImage";
+            this.tpImage.Padding = new System.Windows.Forms.Padding(3);
+            this.tpImage.Size = new System.Drawing.Size(506, 232);
+            this.tpImage.TabIndex = 1;
+            this.tpImage.Text = "tabPage2";
+            this.tpImage.UseVisualStyleBackColor = true;
+            // 
+            // ctlImage2
+            // 
+            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
+            this.ctlImage2.Name = "ctlImage2";
+            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
+            this.ctlImage2.TabIndex = 0;
+            // 
+            // tpMediaPlayer
+            // 
+            this.tpMediaPlayer.Controls.Add(this.ctlMovie2);
+            this.tpMediaPlayer.Location = new System.Drawing.Point(4, 25);
+            this.tpMediaPlayer.Name = "tpMediaPlayer";
+            this.tpMediaPlayer.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMediaPlayer.Size = new System.Drawing.Size(506, 232);
+            this.tpMediaPlayer.TabIndex = 2;
+            this.tpMediaPlayer.Text = "tabPage3";
+            this.tpMediaPlayer.UseVisualStyleBackColor = true;
+            // 
+            // ctlMovie2
+            // 
+            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
+            this.ctlMovie2.Name = "ctlMovie2";
+            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
+            this.ctlMovie2.TabIndex = 0;
             // 
             // button3
             // 
@@ -155,45 +190,31 @@
             this.button3.Text = "button1";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // txtPDFFileName
             // 
-            this.tabPage3.Controls.Add(this.ctlPDF1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(506, 232);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.txtPDFFileName.Location = new System.Drawing.Point(304, 101);
+            this.txtPDFFileName.Name = "txtPDFFileName";
+            this.txtPDFFileName.ReadOnly = true;
+            this.txtPDFFileName.Size = new System.Drawing.Size(454, 22);
+            this.txtPDFFileName.TabIndex = 4;
             // 
-            // ctlImage1
+            // ファイル情報
             // 
-            this.ctlImage1.Location = new System.Drawing.Point(45, 47);
-            this.ctlImage1.Name = "ctlImage1";
-            this.ctlImage1.Size = new System.Drawing.Size(150, 150);
-            this.ctlImage1.TabIndex = 0;
-            // 
-            // ctlMovie1
-            // 
-            this.ctlMovie1.Location = new System.Drawing.Point(89, 53);
-            this.ctlMovie1.Name = "ctlMovie1";
-            this.ctlMovie1.Size = new System.Drawing.Size(150, 150);
-            this.ctlMovie1.TabIndex = 0;
-            // 
-            // ctlPDF1
-            // 
-            this.ctlPDF1.IsHalf = false;
-            this.ctlPDF1.Location = new System.Drawing.Point(6, 37);
-            this.ctlPDF1.Name = "ctlPDF1";
-            this.ctlPDF1.Size = new System.Drawing.Size(474, 150);
-            this.ctlPDF1.TabIndex = 0;
+            this.ファイル情報.AutoSize = true;
+            this.ファイル情報.Location = new System.Drawing.Point(219, 103);
+            this.ファイル情報.Name = "ファイル情報";
+            this.ファイル情報.Size = new System.Drawing.Size(43, 15);
+            this.ファイル情報.TabIndex = 5;
+            this.ファイル情報.Text = "label2";
             // 
             // frmOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.ファイル情報);
+            this.Controls.Add(this.txtPDFFileName);
+            this.Controls.Add(this.tbcFileOpes);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -203,11 +224,12 @@
             this.Text = "frmOperation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.tbcFileOpes.ResumeLayout(false);
+            this.tpAdobePDF.ResumeLayout(false);
+            this.tpImage.ResumeLayout(false);
+            this.tpMediaPlayer.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,19 +237,21 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbDisplay;
         private System.Windows.Forms.ListBox lstPDFFiles;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.Timer Timer1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private ctlImage ctlImage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private ctlMovie ctlMovie1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private ctlPDF ctlPDF1;
+        private System.Windows.Forms.TabControl tbcFileOpes;
+        private System.Windows.Forms.TabPage tpAdobePDF;
+        private System.Windows.Forms.TabPage tpImage;
+        private System.Windows.Forms.TabPage tpMediaPlayer;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtPDFFileName;
+        private System.Windows.Forms.Label ファイル情報;
+        private ctlPDF ctlPDF2;
+        private ctlImage ctlImage2;
+        private ctlMovie ctlMovie2;
     }
 }

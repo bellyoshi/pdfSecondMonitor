@@ -20,7 +20,7 @@ namespace MediaToSecondMonitor
         /// <summary>
         ///     ''' 開ける動画の拡張子
         ///     ''' </summary>
-        private string[] movieExts =
+        private string[] movieExtentions =
         {
         "avi",
         "mpeg",
@@ -32,7 +32,7 @@ namespace MediaToSecondMonitor
         /// <summary>
         ///     ''' 開ける画像の拡張子
         ///     ''' </summary>
-        private string[] ImageExts =
+        private string[] ImageExtentions =
         {
         "jpeg",
         "jpg",
@@ -46,7 +46,7 @@ namespace MediaToSecondMonitor
         /// <summary>
         ///     ''' PDFの拡張子
         ///     ''' </summary>
-        private string[] PDFExts =
+        private string[] PDFExtentions =
         {
         "pdf"
     };
@@ -54,9 +54,9 @@ namespace MediaToSecondMonitor
 
         private void ControlEnable()
         {
-            ctlPDF1.ControlEnabled();
-            ctlMovie1.ControlEnabled();
-            ctlImage1.ControlEnabled();
+            ctlPDF2.ControlEnabled();
+            ctlMovie2.ControlEnabled();
+            ctlImage2.ControlEnabled();
         }
         private void frmOperation_Load(object sender, EventArgs e)
         {
@@ -82,7 +82,7 @@ namespace MediaToSecondMonitor
         private void AppSettingLoad()
         {
             loading = true;
-            cmbDisplay.SelectedIndex = My.Settings.cmbDisplaySelectedIndex;
+            cmbDisplay.SelectedIndex = Properties.Settings.Default.cmbDisplaySelectedIndex;
             try
             {
                 List<FileViewParam> fvinfos = new List<FileViewParam>();
@@ -110,11 +110,11 @@ namespace MediaToSecondMonitor
 
         private void AppSettingSave()
         {
-            My.Settings.cmbDisplaySelectedIndex = cmbDisplay.SelectedIndex;
-            My.Settings.Save();
+            Properties.Settings.Default.cmbDisplaySelectedIndex = cmbDisplay.SelectedIndex;
+            Properties.Settings.Default.Save();
 
             List<FileViewParam> fvinfos = new List<FileViewParam>();
-            foreach (var info in lstPDFFiles.Items)
+            foreach (FileViewParam info in lstPDFFiles.Items)
                 fvinfos.Add(info);
             System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(List<FileViewParam>));
             // 書き込むファイルを開く（UTF-8 BOM無し）
@@ -148,12 +148,12 @@ namespace MediaToSecondMonitor
             // 'フォームを表示するディスプレイのScreenを取得する
             Screen s = (Screen)this.cmbDisplay.SelectedItem;
             // 'フォームの開始位置をディスプレイの左上座標に設定する
-            _dispacher.SetSecondScreen(s);
+            _dispacher.SecondScreen = s;
         }
 
 
 
-        private FormDispacher _dispacher = FormDispacher.GetInstance;
+        private FormDispacher _dispacher = FormDispacher.Instance;
 
 
 
@@ -164,8 +164,8 @@ namespace MediaToSecondMonitor
         {
             if (lstPDFFiles.SelectedItem == null)
                 return;
-            FileViewParam fileviewinfo;
-            fileviewinfo = lstPDFFiles.SelectedItem;
+            FileViewParam fileviewinfo
+             = (FileViewParam)lstPDFFiles.SelectedItem;
             lstPDFFiles.Items.Remove(fileviewinfo);
         }
 
@@ -175,8 +175,8 @@ namespace MediaToSecondMonitor
 
         private void lstFiles_Click(object sender, EventArgs e)
         {
-            FileViewParam fileviewinfo;
-            fileviewinfo = lstPDFFiles.SelectedItem;
+            FileViewParam fileviewinfo
+            =(FileViewParam)lstPDFFiles.SelectedItem;
             if (fileviewinfo == null)
                 return;
             var path = fileviewinfo.FileName;
@@ -194,6 +194,7 @@ namespace MediaToSecondMonitor
             FileViewParam movieFileViewInfo = null/* TODO Change to default(_) if this is not a reference type */;
             if (IsPDFExt(ext))
             {
+                
                 tbcFileOpes.SelectTab(tpAdobePDF.TabIndex);
                 pdfFileViewInfo = fileviewinfo;
             }
@@ -207,9 +208,9 @@ namespace MediaToSecondMonitor
                 tbcFileOpes.SelectTab(tpMediaPlayer.TabIndex);
                 movieFileViewInfo = fileviewinfo;
             }
-            CtlImage1.SetFileInfo(imageFileViewInfo);
-            CtlMovie1.SetFileInfo(movieFileViewInfo);
-            CtlPdf1.SetFileInfo(pdfFileViewInfo);
+            ctlImage2.SetFileInfo(imageFileViewInfo);
+            ctlMovie2.SetFileInfo(movieFileViewInfo);
+            ctlPDF2.FileInfo = pdfFileViewInfo;
             ControlEnable();
         }
 
@@ -225,19 +226,19 @@ namespace MediaToSecondMonitor
         }
 
 
-        private bool IsPDFExt(object ext)
+        private bool IsPDFExt(string extention)
         {
-            return IsContain(ext, PDFExts);
+            return IsContain(extention, PDFExtentions);
         }
 
-        private bool IsImageExt(object ext)
+        private bool IsImageExt(string extention)
         {
-            return IsContain(ext, ImageExts);
+            return IsContain(extention, ImageExtentions);
         }
 
-        private bool IsMovieExt(object ext)
+        private bool IsMovieExt(string extention)
         {
-            return IsContain(ext, movieExts);
+            return IsContain(extention, movieExtentions);
         }
 
         private string CreateFilter()
@@ -245,9 +246,9 @@ namespace MediaToSecondMonitor
             System.Text.StringBuilder buf = new System.Text.StringBuilder();
             buf.Append("画像、動画、PDFファイル");
             buf.Append("|");
-            buf.Append(CreateExtsOfFilter(PDFExts));
-            buf.Append(CreateExtsOfFilter(ImageExts));
-            buf.Append(CreateExtsOfFilter(movieExts));
+            buf.Append(CreateExtsOfFilter(PDFExtentions));
+            buf.Append(CreateExtsOfFilter(ImageExtentions));
+            buf.Append(CreateExtsOfFilter(movieExtentions));
             buf.Append("|");
             buf.Append("All Files(*.*)");
             buf.Append("|");
@@ -273,7 +274,7 @@ namespace MediaToSecondMonitor
             OpenFileDialog1.Filter = CreateFilter();
             OpenFileDialog1.FileName = txtPDFFileName.Text;
             var ret = OpenFileDialog1.ShowDialog();
-            if (ret == Windows.Forms.DialogResult.Cancel)
+            if (ret == System.Windows.Forms.DialogResult.Cancel)
                 return;
 
             var items = lstPDFFiles.Items;
@@ -306,7 +307,7 @@ namespace MediaToSecondMonitor
             string[] fileName = (string[])e.Data.GetData(DataFormats.FileDrop, false);
 
             foreach (var f in fileName)
-                items.Add(new FileViewParam(f));
+                items.Add(new FileViewParam() { FileName = f});
         }
     }
 }

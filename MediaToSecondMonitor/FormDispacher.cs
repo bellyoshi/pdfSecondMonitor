@@ -13,7 +13,7 @@ namespace MediaToSecondMonitor
         private Screen _secondScreen;
         public Screen SecondScreen
         {
-            set{
+            set {
                 _secondScreen = value;
                 foreach (var f in _livingViewer) {
                     SetViewerBounds(f);
@@ -61,7 +61,10 @@ namespace MediaToSecondMonitor
         }
 
         private Form _frmMovieViewer;
-
+        public AxWMPLib.AxWindowsMediaPlayer GetPlayer(){
+            Show(ref _frmMovieViewer, typeof(frmMovieViewer));
+            return ((frmMovieViewer)_frmMovieViewer).GetPlayer();
+        }
         
 
         #endregion
