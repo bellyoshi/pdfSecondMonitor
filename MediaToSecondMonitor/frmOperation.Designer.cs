@@ -39,14 +39,14 @@
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcFileOpes = new System.Windows.Forms.TabControl();
             this.tpAdobePDF = new System.Windows.Forms.TabPage();
-            this.ctlPDF2 = new MediaToSecondMonitor.ctlPDF();
             this.tpImage = new System.Windows.Forms.TabPage();
-            this.ctlImage2 = new MediaToSecondMonitor.ctlImage();
             this.tpMediaPlayer = new System.Windows.Forms.TabPage();
-            this.ctlMovie2 = new MediaToSecondMonitor.ctlMovie();
             this.button3 = new System.Windows.Forms.Button();
             this.txtPDFFileName = new System.Windows.Forms.TextBox();
             this.ファイル情報 = new System.Windows.Forms.Label();
+            this.ctlPDF2 = new MediaToSecondMonitor.ctlPDF();
+            this.ctlImage2 = new MediaToSecondMonitor.ctlImage();
+            this.ctlMovie2 = new MediaToSecondMonitor.ctlMovie();
             this.groupBox1.SuspendLayout();
             this.tbcFileOpes.SuspendLayout();
             this.tpAdobePDF.SuspendLayout();
@@ -83,6 +83,7 @@
             this.cmbDisplay.Name = "cmbDisplay";
             this.cmbDisplay.Size = new System.Drawing.Size(121, 23);
             this.cmbDisplay.TabIndex = 0;
+            this.cmbDisplay.SelectedIndexChanged += new System.EventHandler(this.cmbDisplay_SelectedIndexChanged);
             // 
             // lstPDFFiles
             // 
@@ -92,6 +93,9 @@
             this.lstPDFFiles.Name = "lstPDFFiles";
             this.lstPDFFiles.Size = new System.Drawing.Size(120, 94);
             this.lstPDFFiles.TabIndex = 1;
+            this.lstPDFFiles.Click += new System.EventHandler(this.lstFiles_Click);
+            this.lstPDFFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstPDFFiles_DragDrop);
+            this.lstPDFFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.lstPDFFiles_DragEnter);
             // 
             // button1
             // 
@@ -137,14 +141,6 @@
             this.tpAdobePDF.Text = "tabPage1";
             this.tpAdobePDF.UseVisualStyleBackColor = true;
             // 
-            // ctlPDF2
-            // 
-            this.ctlPDF2.IsHalf = false;
-            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
-            this.ctlPDF2.Name = "ctlPDF2";
-            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
-            this.ctlPDF2.TabIndex = 0;
-            // 
             // tpImage
             // 
             this.tpImage.Controls.Add(this.ctlImage2);
@@ -156,13 +152,6 @@
             this.tpImage.Text = "tabPage2";
             this.tpImage.UseVisualStyleBackColor = true;
             // 
-            // ctlImage2
-            // 
-            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
-            this.ctlImage2.Name = "ctlImage2";
-            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
-            this.ctlImage2.TabIndex = 0;
-            // 
             // tpMediaPlayer
             // 
             this.tpMediaPlayer.Controls.Add(this.ctlMovie2);
@@ -173,13 +162,6 @@
             this.tpMediaPlayer.TabIndex = 2;
             this.tpMediaPlayer.Text = "tabPage3";
             this.tpMediaPlayer.UseVisualStyleBackColor = true;
-            // 
-            // ctlMovie2
-            // 
-            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
-            this.ctlMovie2.Name = "ctlMovie2";
-            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
-            this.ctlMovie2.TabIndex = 0;
             // 
             // button3
             // 
@@ -207,6 +189,28 @@
             this.ファイル情報.TabIndex = 5;
             this.ファイル情報.Text = "label2";
             // 
+            // ctlPDF2
+            // 
+            this.ctlPDF2.IsHalf = false;
+            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
+            this.ctlPDF2.Name = "ctlPDF2";
+            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
+            this.ctlPDF2.TabIndex = 0;
+            // 
+            // ctlImage2
+            // 
+            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
+            this.ctlImage2.Name = "ctlImage2";
+            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
+            this.ctlImage2.TabIndex = 0;
+            // 
+            // ctlMovie2
+            // 
+            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
+            this.ctlMovie2.Name = "ctlMovie2";
+            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
+            this.ctlMovie2.TabIndex = 0;
+            // 
             // frmOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -222,6 +226,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmOperation";
             this.Text = "frmOperation";
+            this.Load += new System.EventHandler(this.frmOperation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tbcFileOpes.ResumeLayout(false);

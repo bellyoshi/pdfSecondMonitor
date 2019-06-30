@@ -33,7 +33,7 @@ namespace MediaToSecondMonitor
             form.Size = bounds.Size;
         }
 
-        private List<Form> _livingViewer;
+        private List<Form> _livingViewer = new List<Form>();
         private void registViewer(Form form)
         {
             if (!_livingViewer.Contains(form))
