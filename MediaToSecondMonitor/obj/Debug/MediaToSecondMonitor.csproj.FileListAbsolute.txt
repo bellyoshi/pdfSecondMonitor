@@ -20,3 +20,4 @@ C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\
 C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csproj.CopyComplete
 C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.exe
 C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.pdb
+C:\Users\bellyoshi\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csprojAssemblyReference.cache

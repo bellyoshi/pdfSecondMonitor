@@ -173,7 +173,7 @@ namespace MediaToSecondMonitor
 
 
 
-        private void lstFiles_Click(object sender, EventArgs e)
+        private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             FileViewParam fileviewinfo
             =(FileViewParam)lstPDFFiles.SelectedItem;
@@ -268,7 +268,7 @@ namespace MediaToSecondMonitor
             return buf.ToString();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void btnFileAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog1.Multiselect = true;
             OpenFileDialog1.Filter = CreateFilter();

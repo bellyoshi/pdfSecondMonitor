@@ -33,20 +33,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbDisplay = new System.Windows.Forms.ComboBox();
             this.lstPDFFiles = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFileAdd = new System.Windows.Forms.Button();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcFileOpes = new System.Windows.Forms.TabControl();
             this.tpAdobePDF = new System.Windows.Forms.TabPage();
+            this.ctlPDF2 = new MediaToSecondMonitor.ctlPDF();
             this.tpImage = new System.Windows.Forms.TabPage();
+            this.ctlImage2 = new MediaToSecondMonitor.ctlImage();
             this.tpMediaPlayer = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ctlMovie2 = new MediaToSecondMonitor.ctlMovie();
+            this.btnUnSelect = new System.Windows.Forms.Button();
             this.txtPDFFileName = new System.Windows.Forms.TextBox();
             this.ファイル情報 = new System.Windows.Forms.Label();
-            this.ctlPDF2 = new MediaToSecondMonitor.ctlPDF();
-            this.ctlImage2 = new MediaToSecondMonitor.ctlImage();
-            this.ctlMovie2 = new MediaToSecondMonitor.ctlMovie();
             this.groupBox1.SuspendLayout();
             this.tbcFileOpes.SuspendLayout();
             this.tpAdobePDF.SuspendLayout();
@@ -89,31 +89,34 @@
             // 
             this.lstPDFFiles.FormattingEnabled = true;
             this.lstPDFFiles.ItemHeight = 15;
-            this.lstPDFFiles.Location = new System.Drawing.Point(59, 185);
+            this.lstPDFFiles.Location = new System.Drawing.Point(59, 155);
             this.lstPDFFiles.Name = "lstPDFFiles";
-            this.lstPDFFiles.Size = new System.Drawing.Size(120, 94);
+            this.lstPDFFiles.Size = new System.Drawing.Size(120, 124);
             this.lstPDFFiles.TabIndex = 1;
-            this.lstPDFFiles.Click += new System.EventHandler(this.lstFiles_Click);
+            this.lstPDFFiles.Click += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
+            this.lstPDFFiles.SelectedIndexChanged += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
             this.lstPDFFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstPDFFiles_DragDrop);
             this.lstPDFFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.lstPDFFiles_DragEnter);
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(45, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(45, 304);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "削除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnFileAdd
             // 
-            this.button2.Location = new System.Drawing.Point(126, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFileAdd.Location = new System.Drawing.Point(126, 304);
+            this.btnFileAdd.Name = "btnFileAdd";
+            this.btnFileAdd.Size = new System.Drawing.Size(101, 23);
+            this.btnFileAdd.TabIndex = 2;
+            this.btnFileAdd.Text = "ファイルを追加";
+            this.btnFileAdd.UseVisualStyleBackColor = true;
+            this.btnFileAdd.Click += new System.EventHandler(this.btnFileAdd_Click);
             // 
             // OpenFileDialog1
             // 
@@ -141,6 +144,14 @@
             this.tpAdobePDF.Text = "tabPage1";
             this.tpAdobePDF.UseVisualStyleBackColor = true;
             // 
+            // ctlPDF2
+            // 
+            this.ctlPDF2.IsHalf = false;
+            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
+            this.ctlPDF2.Name = "ctlPDF2";
+            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
+            this.ctlPDF2.TabIndex = 0;
+            // 
             // tpImage
             // 
             this.tpImage.Controls.Add(this.ctlImage2);
@@ -151,6 +162,13 @@
             this.tpImage.TabIndex = 1;
             this.tpImage.Text = "tabPage2";
             this.tpImage.UseVisualStyleBackColor = true;
+            // 
+            // ctlImage2
+            // 
+            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
+            this.ctlImage2.Name = "ctlImage2";
+            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
+            this.ctlImage2.TabIndex = 0;
             // 
             // tpMediaPlayer
             // 
@@ -163,14 +181,22 @@
             this.tpMediaPlayer.Text = "tabPage3";
             this.tpMediaPlayer.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ctlMovie2
             // 
-            this.button3.Location = new System.Drawing.Point(59, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
+            this.ctlMovie2.Name = "ctlMovie2";
+            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
+            this.ctlMovie2.TabIndex = 0;
+            // 
+            // btnUnSelect
+            // 
+            this.btnUnSelect.Location = new System.Drawing.Point(59, 123);
+            this.btnUnSelect.Name = "btnUnSelect";
+            this.btnUnSelect.Size = new System.Drawing.Size(107, 23);
+            this.btnUnSelect.TabIndex = 2;
+            this.btnUnSelect.Text = "背景を表示";
+            this.btnUnSelect.UseVisualStyleBackColor = true;
+            this.btnUnSelect.Click += new System.EventHandler(this.btnUnSelect_Click);
             // 
             // txtPDFFileName
             // 
@@ -189,28 +215,6 @@
             this.ファイル情報.TabIndex = 5;
             this.ファイル情報.Text = "label2";
             // 
-            // ctlPDF2
-            // 
-            this.ctlPDF2.IsHalf = false;
-            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
-            this.ctlPDF2.Name = "ctlPDF2";
-            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
-            this.ctlPDF2.TabIndex = 0;
-            // 
-            // ctlImage2
-            // 
-            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
-            this.ctlImage2.Name = "ctlImage2";
-            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
-            this.ctlImage2.TabIndex = 0;
-            // 
-            // ctlMovie2
-            // 
-            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
-            this.ctlMovie2.Name = "ctlMovie2";
-            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
-            this.ctlMovie2.TabIndex = 0;
-            // 
             // frmOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -219,9 +223,9 @@
             this.Controls.Add(this.ファイル情報);
             this.Controls.Add(this.txtPDFFileName);
             this.Controls.Add(this.tbcFileOpes);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFileAdd);
+            this.Controls.Add(this.btnUnSelect);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lstPDFFiles);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmOperation";
@@ -244,15 +248,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbDisplay;
         private System.Windows.Forms.ListBox lstPDFFiles;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFileAdd;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.TabControl tbcFileOpes;
         private System.Windows.Forms.TabPage tpAdobePDF;
         private System.Windows.Forms.TabPage tpImage;
         private System.Windows.Forms.TabPage tpMediaPlayer;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnUnSelect;
         private System.Windows.Forms.TextBox txtPDFFileName;
         private System.Windows.Forms.Label ファイル情報;
         private ctlPDF ctlPDF2;
