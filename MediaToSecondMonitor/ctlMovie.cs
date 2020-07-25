@@ -39,11 +39,6 @@ namespace MediaToSecondMonitor
         private bool inPlay = false;
 
 
-        private void btnStartStop_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.play();
-        }
-
         private void btnStop_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.pause();
@@ -63,6 +58,11 @@ namespace MediaToSecondMonitor
         public void ControlEnabled()
         {
             this.Enabled = !(_fileViewParam == null);
+        }
+
+        private void BtnPlay_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.play();
         }
     }
 }

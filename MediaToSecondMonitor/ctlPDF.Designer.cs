@@ -53,6 +53,7 @@
             this.btnPrevious.TabIndex = 0;
             this.btnPrevious.Text = "前へ";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnNext
             // 
@@ -62,6 +63,7 @@
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "次へ";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -71,6 +73,7 @@
             this.btnLast.TabIndex = 0;
             this.btnLast.Text = "最後";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // button5
             // 
@@ -80,6 +83,7 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "0.5ページ";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnNextHalf_Click);
             // 
             // ctlPDF
             // 

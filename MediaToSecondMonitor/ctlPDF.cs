@@ -68,6 +68,7 @@ namespace MediaToSecondMonitor
                     return;
                 }
                 _pictureBox = _dispacher.GetPictureBox();
+                OpenFile(_fileViewParam.FileName);
             }
         }
 

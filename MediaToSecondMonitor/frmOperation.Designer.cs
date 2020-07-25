@@ -58,9 +58,11 @@
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbDisplay);
-            this.groupBox1.Location = new System.Drawing.Point(25, 20);
+            this.groupBox1.Location = new System.Drawing.Point(31, 24);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(733, 75);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(916, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "設定";
@@ -68,9 +70,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 24);
+            this.label1.Location = new System.Drawing.Point(39, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 15);
+            this.label1.Size = new System.Drawing.Size(153, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "表示するディスプレイ";
             // 
@@ -79,19 +82,21 @@
             this.cmbDisplay.AllowDrop = true;
             this.cmbDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDisplay.FormattingEnabled = true;
-            this.cmbDisplay.Location = new System.Drawing.Point(162, 21);
+            this.cmbDisplay.Location = new System.Drawing.Point(202, 25);
+            this.cmbDisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbDisplay.Name = "cmbDisplay";
-            this.cmbDisplay.Size = new System.Drawing.Size(121, 23);
+            this.cmbDisplay.Size = new System.Drawing.Size(150, 26);
             this.cmbDisplay.TabIndex = 0;
             this.cmbDisplay.SelectedIndexChanged += new System.EventHandler(this.cmbDisplay_SelectedIndexChanged);
             // 
             // lstPDFFiles
             // 
             this.lstPDFFiles.FormattingEnabled = true;
-            this.lstPDFFiles.ItemHeight = 15;
-            this.lstPDFFiles.Location = new System.Drawing.Point(59, 155);
+            this.lstPDFFiles.ItemHeight = 18;
+            this.lstPDFFiles.Location = new System.Drawing.Point(74, 186);
+            this.lstPDFFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstPDFFiles.Name = "lstPDFFiles";
-            this.lstPDFFiles.Size = new System.Drawing.Size(120, 124);
+            this.lstPDFFiles.Size = new System.Drawing.Size(149, 148);
             this.lstPDFFiles.TabIndex = 1;
             this.lstPDFFiles.Click += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
             this.lstPDFFiles.SelectedIndexChanged += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
@@ -100,9 +105,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(45, 304);
+            this.btnDelete.Location = new System.Drawing.Point(56, 365);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(94, 28);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "削除";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -110,9 +116,10 @@
             // 
             // btnFileAdd
             // 
-            this.btnFileAdd.Location = new System.Drawing.Point(126, 304);
+            this.btnFileAdd.Location = new System.Drawing.Point(158, 365);
+            this.btnFileAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFileAdd.Name = "btnFileAdd";
-            this.btnFileAdd.Size = new System.Drawing.Size(101, 23);
+            this.btnFileAdd.Size = new System.Drawing.Size(126, 28);
             this.btnFileAdd.TabIndex = 2;
             this.btnFileAdd.Text = "ファイルを追加";
             this.btnFileAdd.UseVisualStyleBackColor = true;
@@ -127,19 +134,21 @@
             this.tbcFileOpes.Controls.Add(this.tpAdobePDF);
             this.tbcFileOpes.Controls.Add(this.tpImage);
             this.tbcFileOpes.Controls.Add(this.tpMediaPlayer);
-            this.tbcFileOpes.Location = new System.Drawing.Point(274, 123);
+            this.tbcFileOpes.Location = new System.Drawing.Point(342, 148);
+            this.tbcFileOpes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbcFileOpes.Name = "tbcFileOpes";
             this.tbcFileOpes.SelectedIndex = 0;
-            this.tbcFileOpes.Size = new System.Drawing.Size(514, 261);
+            this.tbcFileOpes.Size = new System.Drawing.Size(642, 313);
             this.tbcFileOpes.TabIndex = 3;
             // 
             // tpAdobePDF
             // 
             this.tpAdobePDF.Controls.Add(this.ctlPDF2);
-            this.tpAdobePDF.Location = new System.Drawing.Point(4, 25);
+            this.tpAdobePDF.Location = new System.Drawing.Point(4, 28);
+            this.tpAdobePDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpAdobePDF.Name = "tpAdobePDF";
-            this.tpAdobePDF.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdobePDF.Size = new System.Drawing.Size(506, 232);
+            this.tpAdobePDF.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpAdobePDF.Size = new System.Drawing.Size(634, 281);
             this.tpAdobePDF.TabIndex = 0;
             this.tpAdobePDF.Text = "tabPage1";
             this.tpAdobePDF.UseVisualStyleBackColor = true;
@@ -147,52 +156,58 @@
             // ctlPDF2
             // 
             this.ctlPDF2.IsHalf = false;
-            this.ctlPDF2.Location = new System.Drawing.Point(26, 37);
+            this.ctlPDF2.Location = new System.Drawing.Point(32, 44);
+            this.ctlPDF2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctlPDF2.Name = "ctlPDF2";
-            this.ctlPDF2.Size = new System.Drawing.Size(540, 150);
+            this.ctlPDF2.Size = new System.Drawing.Size(675, 180);
             this.ctlPDF2.TabIndex = 0;
             // 
             // tpImage
             // 
             this.tpImage.Controls.Add(this.ctlImage2);
-            this.tpImage.Location = new System.Drawing.Point(4, 25);
+            this.tpImage.Location = new System.Drawing.Point(4, 28);
+            this.tpImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpImage.Name = "tpImage";
-            this.tpImage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImage.Size = new System.Drawing.Size(506, 232);
+            this.tpImage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpImage.Size = new System.Drawing.Size(634, 281);
             this.tpImage.TabIndex = 1;
             this.tpImage.Text = "tabPage2";
             this.tpImage.UseVisualStyleBackColor = true;
             // 
             // ctlImage2
             // 
-            this.ctlImage2.Location = new System.Drawing.Point(51, 37);
+            this.ctlImage2.Location = new System.Drawing.Point(64, 44);
+            this.ctlImage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlImage2.Name = "ctlImage2";
-            this.ctlImage2.Size = new System.Drawing.Size(150, 150);
+            this.ctlImage2.Size = new System.Drawing.Size(188, 180);
             this.ctlImage2.TabIndex = 0;
             // 
             // tpMediaPlayer
             // 
             this.tpMediaPlayer.Controls.Add(this.ctlMovie2);
-            this.tpMediaPlayer.Location = new System.Drawing.Point(4, 25);
+            this.tpMediaPlayer.Location = new System.Drawing.Point(4, 28);
+            this.tpMediaPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpMediaPlayer.Name = "tpMediaPlayer";
-            this.tpMediaPlayer.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMediaPlayer.Size = new System.Drawing.Size(506, 232);
+            this.tpMediaPlayer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpMediaPlayer.Size = new System.Drawing.Size(634, 281);
             this.tpMediaPlayer.TabIndex = 2;
             this.tpMediaPlayer.Text = "tabPage3";
             this.tpMediaPlayer.UseVisualStyleBackColor = true;
             // 
             // ctlMovie2
             // 
-            this.ctlMovie2.Location = new System.Drawing.Point(131, 21);
+            this.ctlMovie2.Location = new System.Drawing.Point(44, 37);
+            this.ctlMovie2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctlMovie2.Name = "ctlMovie2";
-            this.ctlMovie2.Size = new System.Drawing.Size(150, 150);
+            this.ctlMovie2.Size = new System.Drawing.Size(557, 150);
             this.ctlMovie2.TabIndex = 0;
             // 
             // btnUnSelect
             // 
-            this.btnUnSelect.Location = new System.Drawing.Point(59, 123);
+            this.btnUnSelect.Location = new System.Drawing.Point(74, 148);
+            this.btnUnSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUnSelect.Name = "btnUnSelect";
-            this.btnUnSelect.Size = new System.Drawing.Size(107, 23);
+            this.btnUnSelect.Size = new System.Drawing.Size(134, 28);
             this.btnUnSelect.TabIndex = 2;
             this.btnUnSelect.Text = "背景を表示";
             this.btnUnSelect.UseVisualStyleBackColor = true;
@@ -200,26 +215,28 @@
             // 
             // txtPDFFileName
             // 
-            this.txtPDFFileName.Location = new System.Drawing.Point(304, 101);
+            this.txtPDFFileName.Location = new System.Drawing.Point(380, 121);
+            this.txtPDFFileName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPDFFileName.Name = "txtPDFFileName";
             this.txtPDFFileName.ReadOnly = true;
-            this.txtPDFFileName.Size = new System.Drawing.Size(454, 22);
+            this.txtPDFFileName.Size = new System.Drawing.Size(566, 25);
             this.txtPDFFileName.TabIndex = 4;
             // 
             // ファイル情報
             // 
             this.ファイル情報.AutoSize = true;
-            this.ファイル情報.Location = new System.Drawing.Point(219, 103);
+            this.ファイル情報.Location = new System.Drawing.Point(274, 124);
+            this.ファイル情報.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ファイル情報.Name = "ファイル情報";
-            this.ファイル情報.Size = new System.Drawing.Size(43, 15);
+            this.ファイル情報.Size = new System.Drawing.Size(52, 18);
             this.ファイル情報.TabIndex = 5;
             this.ファイル情報.Text = "label2";
             // 
             // frmOperation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 540);
             this.Controls.Add(this.ファイル情報);
             this.Controls.Add(this.txtPDFFileName);
             this.Controls.Add(this.tbcFileOpes);
@@ -228,6 +245,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lstPDFFiles);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmOperation";
             this.Text = "frmOperation";
             this.Load += new System.EventHandler(this.frmOperation_Load);
