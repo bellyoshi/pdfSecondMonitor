@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MediaToSecondMonitor
 {
-    public partial class frmMovieViewer : Form
+    public partial class frmMovieViewer : frmViewer
     {
         public frmMovieViewer()
         {
@@ -21,5 +21,14 @@ namespace MediaToSecondMonitor
         {
             return axWindowsMediaPlayer1;
         }
+
+
+        public override void DoHide()
+        {
+            Hide();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+        }
+
+
     }
 }

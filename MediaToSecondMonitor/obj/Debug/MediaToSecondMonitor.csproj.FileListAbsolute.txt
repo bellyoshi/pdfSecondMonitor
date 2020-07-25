@@ -31,7 +31,6 @@ C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\Pdfi
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\nl\PdfiumViewer.resources.dll
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\Interop.WMPLib.dll
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csprojAssemblyReference.cache
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\Interop.WMPLib.dll
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csproj.ResolveComReference.cache

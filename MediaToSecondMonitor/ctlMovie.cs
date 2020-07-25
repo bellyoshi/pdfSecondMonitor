@@ -64,6 +64,11 @@ namespace MediaToSecondMonitor
         {
             player.Ctlcontrols.play();
         }
+
+        private void ctlMovie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

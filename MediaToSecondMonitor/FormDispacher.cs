@@ -33,8 +33,8 @@ namespace MediaToSecondMonitor
             form.Size = bounds.Size;
         }
 
-        private List<Form> _livingViewer = new List<Form>();
-        private void registViewer(Form form)
+        private List<frmViewer> _livingViewer = new List<frmViewer>();
+        private void registViewer(frmViewer form)
         {
             if (!_livingViewer.Contains(form))
             {
@@ -53,14 +53,14 @@ namespace MediaToSecondMonitor
         #region "show"
 
 
-        private Form _frmImageViewer;
+        private frmViewer _frmImageViewer;
         public PictureBox GetPictureBox()
         {
             Show(ref _frmImageViewer, typeof(frmImageViewer));
             return ((frmImageViewer)_frmImageViewer).PictureBox();
         }
 
-        private Form _frmMovieViewer;
+        private frmViewer _frmMovieViewer;
         public AxWMPLib.AxWindowsMediaPlayer GetPlayer(){
             Show(ref _frmMovieViewer, typeof(frmMovieViewer));
             return ((frmMovieViewer)_frmMovieViewer).GetPlayer();
@@ -69,24 +69,24 @@ namespace MediaToSecondMonitor
 
         #endregion
 
-        #region "show flame work"
+        #region "show frame work"
 
-        public void Create(ref Form form,Type formType)
+        public void Create(ref frmViewer  form,Type formType)
         {
             if (form == null || !_livingViewer.Contains(form))
             {
-                form = (Form)Activator.CreateInstance(formType);
+                form = (frmViewer)Activator.CreateInstance(formType);
                 form.FormClosed += new FormClosedEventHandler(form_Closed);
             }
         }
 
         private void form_Closed(Object sender,EventArgs e)
         {
-            var form = (Form)sender;
+            var form = (frmViewer)sender;
             _livingViewer.Remove(form);
         }
 
-        private void HideOther(Form targetForm)
+        private void HideOther(frmViewer  targetForm)
         {
             foreach(var f in _livingViewer)
             {
@@ -94,11 +94,11 @@ namespace MediaToSecondMonitor
                 {
                     continue;
                 }
-                f.Hide();
+                f.DoHide();
             }
         }
 
-        private void Show(ref Form targetForm,Type formType)
+        private void Show(ref frmViewer targetForm,Type formType)
         {
             Create(ref targetForm, formType);
             registViewer(targetForm);

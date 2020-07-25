@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MediaToSecondMonitor
 {
-    public partial class frmImageViewer : Form
+    public partial class frmImageViewer : frmViewer
     {
         public frmImageViewer()
         {
@@ -26,5 +26,11 @@ namespace MediaToSecondMonitor
         {
             return pictureBox1;
         }
+
+        public override void DoHide()
+        {
+            Hide();
+        }
+
     }
 }

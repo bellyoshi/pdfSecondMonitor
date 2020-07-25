@@ -90,6 +90,12 @@
     <Compile Include="frmOperation.Designer.cs">
       <DependentUpon>frmOperation.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewer.Designer.cs">
+      <DependentUpon>frmViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextViewParam.cs" />
