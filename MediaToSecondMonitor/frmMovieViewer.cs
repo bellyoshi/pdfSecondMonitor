@@ -26,6 +26,7 @@ namespace MediaToSecondMonitor
         public override void DoHide()
         {
             Hide();
+
             axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 

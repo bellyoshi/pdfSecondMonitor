@@ -45,3 +45,4 @@ C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\Medi
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csproj.CopyComplete
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.exe
 C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.pdb
+C:\Users\bellm\Source\Repos\pdfSecondMonitor\MediaToSecondMonitor\obj\Debug\MediaToSecondMonitor.csprojAssemblyReference.cache

@@ -39,20 +39,7 @@ namespace MediaToSecondMonitor
         private bool inPlay = false;
 
 
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.pause();
-        }
 
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.fastForward();
-        }
-
-        private void btnFastReverse_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.fastReverse();
-        }
 
 
         public void ControlEnabled()
@@ -62,12 +49,37 @@ namespace MediaToSecondMonitor
 
         private void BtnPlay_Click(object sender, EventArgs e)
         {
-            player.Ctlcontrols.play();
+            if(inPlay)
+            {
+                player.Ctlcontrols.pause(); 
+            }
+            else
+            {
+                player.Ctlcontrols.play();
+            }
+            inPlay = !inPlay;
+
         }
 
-        private void ctlMovie_Load(object sender, EventArgs e)
+
+
+        private void btnFastReverse_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.fastReverse();
+        }
+
+        private void btnForward_Click(object sender, EventArgs e)
         {
 
+            player.Ctlcontrols.fastForward();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.stop();
+            player.Ctlcontrols.play();
+            player.Ctlcontrols.pause();
+            inPlay = false;
         }
     }
 }
